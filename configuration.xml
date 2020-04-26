@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<configuration>
+    <classpath>
+        <entry>lib/ojdbc14.jar</entry>
+    </classpath>
+    <connections>
+        <database name="fjdcgl">
+            <driverClass>oracle.jdbc.driver.OracleDriver</driverClass>
+            <url>jdbc:oracle:thin:@192.168.0.51:1521:ORCL251</url>
+            <username>aqwg</username>
+            <password>aqwg</password>
+            <schema/>
+        </database>
+        <database name="sshframe">
+            <driverClass>oracle.jdbc.driver.OracleDriver</driverClass>
+            <url>jdbc:oracle:thin:@localhost:1521:orcl</url>
+            <username>sshframe</username>
+            <password>sshframe</password>
+            <schema/>
+        </database>
+        <database name="check_system">
+            <driverClass>oracle.jdbc.driver.OracleDriver</driverClass>
+            <url>jdbc:oracle:thin:@192.168.0.51:1521:ORCL251</url>
+            <username>check_system</username>
+            <password>check_system</password>
+            <schema/>
+        </database>
+        <database name="stydjwpt_new">
+            <driverClass>oracle.jdbc.driver.OracleDriver</driverClass>
+            <url>jdbc:oracle:thin:@192.168.0.51:1521:ORCL251</url>
+            <username>stydjwpt_new</username>
+            <password>stydjwpt_new</password>
+            <schema/>
+        </database>
+        <database name="yyjx">
+            <driverClass>oracle.jdbc.driver.OracleDriver</driverClass>
+            <url>jdbc:oracle:thin:@192.168.0.51:1521:ORCL251</url>
+            <username>yyjx</username>
+            <password>yyjx</password>
+            <schema/>
+        </database>
+        <database name="CHECKSTATION">
+            <driverClass>oracle.jdbc.driver.OracleDriver</driverClass>
+            <url>jdbc:oracle:thin:@192.168.0.51:1521:ORCL251</url>
+            <username>checkstation</username>
+            <password>checkstation</password>
+            <schema/>
+            <active>true</active>
+        </database>
+        <database name="yyzhet">
+            <driverClass>oracle.jdbc.driver.OracleDriver</driverClass>
+            <url>jdbc:oracle:thin:@192.168.0.51:1521:ORCL251</url>
+            <username>yyzhet</username>
+            <password>yyzhet</password>
+            <schema/>
+        </database>
+        <database name="pahn">
+            <driverClass>oracle.jdbc.driver.OracleDriver</driverClass>
+            <url>jdbc:oracle:thin:@192.168.0.51:1521:ORCL251</url>
+            <username>pahn</username>
+            <password>pahn</password>
+            <schema/>
+        </database>
+        <database name="jjjqzb">
+            <driverClass>oracle.jdbc.driver.OracleDriver</driverClass>
+            <url>jdbc:oracle:thin:@192.168.0.51:1521:jwt251</url>
+            <username>jjjqzb</username>
+            <password>jjjqzb</password>
+            <schema/>
+        </database>
+        <database name="data_transfer">
+            <driverClass>oracle.jdbc.driver.OracleDriver</driverClass>
+            <url>jdbc:oracle:thin:@192.168.0.51:1521:ORCL251</url>
+            <username>data_transfer</username>
+            <password>data_transfer</password>
+            <schema/>
+        </database>
+        <database name="fxczf_test">
+            <driverClass>oracle.jdbc.driver.OracleDriver</driverClass>
+            <url>jdbc:oracle:thin:@192.168.0.51:1521:jwt251</url>
+            <username>fxczf_test</username>
+            <password>fxczf_test</password>
+            <schema/>
+        </database>
+        <database name="alarm_system">
+            <driverClass>oracle.jdbc.driver.OracleDriver</driverClass>
+            <url>jdbc:oracle:thin:@192.168.0.51:1521:jwt251</url>
+            <username>alarm_system</username>
+            <password>alarm_system</password>
+            <schema/>
+        </database>
+    </connections>
+    <targetProject>D:\01_CreateCode</targetProject>
+    <basePackage>com.aj.frame.fjdcgl.common</basePackage>
+    <moduleName>beans</moduleName>
+    <templates>
+        <template engine="freemarker" name="实体类" selected="true">
+            <templateFile>/AJBean/ajbean.ftl</templateFile>
+            <targetPath>${targetProject}\beans\</targetPath>
+            <targetFileName>${table.className?substring(1)}.java</targetFileName>
+            <encoding>UTF-8</encoding>
+        </template>
+        <template engine="freemarker" name="hibernate.hbm.xml" selected="true">
+            <templateFile>/AJBean/hibernate.hdm.ftl</templateFile>
+            <targetPath>${targetProject}\beans\</targetPath>
+            <targetFileName>${table.className?substring(1)}.hbm.xml</targetFileName>
+            <encoding>UTF-8</encoding>
+        </template>
+        <template engine="freemarker" name="扩展对象" selected="true">
+            <templateFile>/AJBean/ext.ftl</templateFile>
+            <targetPath>${targetProject}\beans\</targetPath>
+            <targetFileName>${table.className?substring(1)}ExtQueryConditions.java</targetFileName>
+            <encoding>UTF-8</encoding>
+        </template>
+    </templates>
+</configuration>
