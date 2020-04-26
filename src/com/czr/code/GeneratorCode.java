@@ -53,6 +53,7 @@ public class GeneratorCode {
 		GeneratorCode generator = new GeneratorCode();
     	generator.initSettings();
     	generator.getTonnection();
+    	//提交远程测试
 	}
 	
 	private List<String> tableNames(String schema) {
