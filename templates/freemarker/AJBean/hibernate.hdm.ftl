@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.aj.frame.checkstation.beans.${table.className?substring(1)}" table="${table.tableName}">
+    <class name="${basePackage}.${moduleName};.${table.className?substring(1)}" table="${table.tableName}">
         <comment>${table.tableAlias}</comment>
         <id name="objId" type="java.lang.Long">
             <column name="OBJ_ID" precision="16" scale="0" />
