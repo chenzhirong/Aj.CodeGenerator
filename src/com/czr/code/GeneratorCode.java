@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.mysql.jdbc.JDBC4Connection;
 import org.apache.log4j.Logger;
 import org.joy.config.Configuration;
 import org.joy.config.TypeMapping;
@@ -112,8 +111,13 @@ public class GeneratorCode {
           	List<String> tableNames = tableNames(name);
           	for (String tableName : tableNames) {
           		if(!tableName.toUpperCase().startsWith("T_")) {
+					LOGGER.warn(String.format("无效的表名=%s,应以[T_]开头", tableName));
           			continue;
           		}
+          		if(configuration.getExcludeTables().contains(tableName.toUpperCase())) {
+					LOGGER.warn(String.format("忽略表=%s", tableName));
+          			continue;
+				}
           		LOGGER.info(String.format("生成tableName文件=%s", tableName));
           		tableModel = db.getTable(getCatalog(),name, tableName);
           		List<TemplateElement> templateElements = configuration.getTemplates();
