@@ -1,17 +1,17 @@
-package com.aj.frame.checkstation.beans;
+package ${basePackage}.${moduleName};
 import com.aj.frame.beans.AJFrameNamedBeanAbstract;
 <#if (table.hasDateColumn)>
 import java.util.Date;
 </#if>
 import java.lang.Long;
 
- /**  
+ /**
  * @Title:  ${table.remarks}
  * @Description:${table.remarks}
- * @author: chenzhirong  
+ * @author: chenzhirong
  * @date:${.now}
  * @version V1.0
- */  
+ */
 public class ${table.className?substring(1)} extends AJFrameNamedBeanAbstract {
 
 <#list table.primaryKeys as key>
@@ -27,9 +27,9 @@ public class ${table.className?substring(1)} extends AJFrameNamedBeanAbstract {
      */
 <#if ( column.javaProperty == "state" )>
 	private Byte ${column.javaProperty};
-<#elseif (column.isIntegerNumber() && column.size == 1)> 	
+<#elseif (column.isIntegerNumber() && column.size == 1)>
 	private Boolean ${column.javaProperty};
-<#else> 
+<#else>
 	private ${column.javaType} ${column.javaProperty};
 </#if>
 </#list>
@@ -52,7 +52,7 @@ public class ${table.className?substring(1)} extends AJFrameNamedBeanAbstract {
     public void ${column.setterMethodName}(Byte ${column.javaProperty}){
         this.${column.javaProperty} = ${column.javaProperty};
     }
-<#elseif (column.isIntegerNumber() && column.size == 1)> 
+<#elseif (column.isIntegerNumber() && column.size == 1)>
     public Boolean ${column.getterMethodName}(){
         return this.${column.javaProperty};
     }
@@ -65,8 +65,8 @@ public class ${table.className?substring(1)} extends AJFrameNamedBeanAbstract {
     }
     public void ${column.setterMethodName}(${column.javaType} ${column.javaProperty}){
         this.${column.javaProperty} = ${column.javaProperty};
-    }	
-</#if>    
+    }
+</#if>
 </#list>
 
     @Override
