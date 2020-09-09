@@ -606,31 +606,31 @@ public class Generator extends JFrame {
     /**
      * Launch the application.
      */
-//    public static void main(String[] args) {
-//        try {
-//            // 设置本属性将改变窗口边框样式定义
-//            BeautyEyeLNFHelper.frameBorderStyle = BeautyEyeLNFHelper.FrameBorderStyle.translucencySmallShadow;
-//            org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper.launchBeautyEyeLNF();
-//        } catch (Exception e) {
-//        }
-//
-//        EventQueue.invokeLater(new Runnable() {
-//
-//            @Override
-//            public void run() {
-//                try {
-//                    UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-//                    Generator frame = new Generator();
-//                    frame.setVisible(true);
-//                    frame.centerScreen();
-//                    frame.contentSplitPane.setDividerLocation(0.25);
-//
-//                } catch (Exception e) {
-//                    LOGGER.info(e.getMessage(), e);
-//                }
-//            }
-//        });
-//    }
+    public static void main(String[] args) {
+        try {
+            // 设置本属性将改变窗口边框样式定义
+            BeautyEyeLNFHelper.frameBorderStyle = BeautyEyeLNFHelper.FrameBorderStyle.translucencySmallShadow;
+            org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper.launchBeautyEyeLNF();
+        } catch (Exception e) {
+        }
+
+        EventQueue.invokeLater(new Runnable() {
+
+            @Override
+            public void run() {
+                try {
+                    UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+                    Generator frame = new Generator();
+                    frame.setVisible(true);
+                    frame.centerScreen();
+                    frame.contentSplitPane.setDividerLocation(0.25);
+
+                } catch (Exception e) {
+                    LOGGER.info(e.getMessage(), e);
+                }
+            }
+        });
+    }
     
     
     

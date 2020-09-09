@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <jdbcDrivers>
     <driver>
+        <driverClass>com.mysql.cj.jdbc.Driver</driverClass>
+        <name>com.mysql.cj.jdbc.Driver</name>
+        <url>jdbc:mysql://localhost:3306/jczxt?useSSL=false&amp;serverTimezone=UTC</url>
+    </driver>
+    <driver>
         <driverClass>net.sourceforge.jtds.jdbc.Driver</driverClass>
         <name>Microsoft SQL Server (jTDS driver)</name>
         <url>jdbc:jtds:sqlserver://&lt;hostname&gt;[:&lt;port&gt;]/&lt;dbname&gt;</url>

@@ -95,11 +95,11 @@
             <password>alarm_system</password>
             <schema/>
         </database>
-        <database name="ydjwpt">
-            <driverClass>com.mysql.jdbc.Driver</driverClass>
-            <url>jdbc:mysql://192.168.0.66:3306/ydjwpt?relaxAutoCommit=true&amp;zeroDateTimeBehavior=convertToNull</url>
-            <username>ydjw</username>
-            <password>ydjw</password>
+        <database name="auth">
+            <driverClass>com.mysql.jdbc.Driver</driverClass>ssssssss
+            <url>jdbc:mysql://192.168.0.66:3306/auth?relaxAutoCommit=true&amp;zeroDateTimeBehavior=convertToNull</url>
+            <username>root</username>
+            <password>root</password>
             <schema/>
             <active>true</active>
         </database>
