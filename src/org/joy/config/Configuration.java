@@ -52,6 +52,7 @@ public class Configuration {
     private String                configurationFile;
     private List<DatabaseElement> connectionHistory;
     private List<String>          classPathEntries;
+    private List<String>          excludeTables;
     private String                targetProject;
     private String                basePackage;
     private String                moduleName;
@@ -61,6 +62,7 @@ public class Configuration {
         this.configurationFile = classPath + CONFIGURATION_FILE;
         connectionHistory = new ArrayList<DatabaseElement>();
         classPathEntries = new ArrayList<String>();
+        excludeTables = new ArrayList<String>();
         templates = new ArrayList<TemplateElement>();
     }
 
@@ -74,6 +76,7 @@ public class Configuration {
             XPath path = f.newXPath();
 
             parseClassPathEntry(doc, path);
+            parseExcludeTables(doc, path);
             parseConnections(doc, path);
             parseTemplates(doc, path);
 
@@ -93,6 +96,19 @@ public class Configuration {
                 String entry = parseElementNodeValue(classpathEntrys.item(i));
                 if (StringUtil.isNotEmpty(entry)) {
                     classPathEntries.add(entry);
+                }
+            }
+        }
+    }
+
+    private void parseExcludeTables(Document doc, XPath path) throws XPathExpressionException {
+        NodeList classpathEntrys = (NodeList) path.evaluate("configuration/excludeTables/name", doc,
+                XPathConstants.NODESET);
+        if (classpathEntrys != null) {
+            for (int i = 0; i < classpathEntrys.getLength(); i++) {
+                String name = parseElementNodeValue(classpathEntrys.item(i));
+                if (StringUtil.isNotEmpty(name)) {
+                    excludeTables.add(name.toUpperCase());
                 }
             }
         }
@@ -344,4 +360,13 @@ public class Configuration {
     public List<TemplateElement> getTemplates() {
         return templates;
     }
+
+    public List<String> getExcludeTables() {
+        return excludeTables;
+    }
+
+    public void setExcludeTables(List<String> excludeTables) {
+        this.excludeTables = excludeTables;
+    }
+
 }

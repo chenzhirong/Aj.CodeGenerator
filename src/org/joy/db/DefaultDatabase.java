@@ -60,8 +60,7 @@ public class DefaultDatabase extends Database {
                 table.setCatalog(rs.getString("TABLE_CAT"));
                 table.setSchema(rs.getString("TABLE_SCHEM"));
                 table.setTableName(tableName);
-                table.setRemarks(rs.getString("REMARKS"));
-                table.setTableType(rs.getString("TABLE_TYPE"));
+                table.setRemarks(rs.getString("REMARKS"));table.setTableType(rs.getString("TABLE_TYPE"));
 
                 introspectPrimaryKeys(table);
                 introspectColumns(table);
@@ -117,8 +116,8 @@ public class DefaultDatabase extends Database {
                 column.setNullable(rs.getInt("NULLABLE") == 1);
                 column.setDefaultValue(rs.getString("COLUMN_DEF"));
                 column.setDecimalDigits(rs.getInt("DECIMAL_DIGITS"));
-//                column.setRemarks(rs.getString("REMARKS"));
-                column.setRemarks("REMARK");
+                column.setRemarks(rs.getString("REMARKS"));
+//                column.setRemarks("REMARK");
                 if (hasColumn(rs, "IS_AUTOINCREMENT")) {
                     column.setAutoincrement(rs.getBoolean("IS_AUTOINCREMENT"));
                 }

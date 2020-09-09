@@ -45,7 +45,13 @@
             <username>checkstation</username>
             <password>checkstation</password>
             <schema/>
-            <active>true</active>
+        </database>
+        <database name="MODEL_TEST">
+            <driverClass>oracle.jdbc.driver.OracleDriver</driverClass>
+            <url>jdbc:oracle:thin:@192.168.0.51:1521:ORCL251</url>
+            <username>model_test</username>
+            <password>model_test</password>
+            <schema/>
         </database>
         <database name="yyzhet">
             <driverClass>oracle.jdbc.driver.OracleDriver</driverClass>
@@ -89,10 +95,30 @@
             <password>alarm_system</password>
             <schema/>
         </database>
+        <database name="ydjwpt">
+            <driverClass>com.mysql.jdbc.Driver</driverClass>
+            <url>jdbc:mysql://192.168.0.66:3306/ydjwpt?relaxAutoCommit=true&amp;zeroDateTimeBehavior=convertToNull</url>
+            <username>ydjw</username>
+            <password>ydjw</password>
+            <schema/>
+            <active>true</active>
+        </database>
     </connections>
     <targetProject>D:\01_CreateCode</targetProject>
-    <basePackage>com.aj.frame.fjdcgl.common</basePackage>
+    <basePackage>com.aj.frame.whitedew</basePackage>
     <moduleName>beans</moduleName>
+    <excludeTables>
+        <name>T_ACCOUNT</name>
+        <name>T_ACCOUNT_REFERENCE</name>
+        <name>T_APPLICATION</name>
+        <name>T_SESSION</name>
+        <name>T_SESSION_DETAILS</name>
+        <name>T_USER</name>
+        <name>T_USER_GROUP</name>
+        <name>T_USER_OF_USER_GROUP</name>
+        <name>T_USER_TYPE</name>
+        <name>T_USER_TYPE_OF_USER</name>
+    </excludeTables>
     <templates>
         <template engine="freemarker" name="实体类" selected="true">
             <templateFile>/AJBean/ajbean.ftl</templateFile>

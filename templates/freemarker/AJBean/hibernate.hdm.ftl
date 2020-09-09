@@ -3,12 +3,13 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.aj.frame.checkstation.beans.${table.className?substring(1)}" table="${table.tableName}">
+    <class name="${basePackage}.${moduleName}.${table.className?substring(1)}" table="${table.tableName}">
         <comment>${table.tableAlias}</comment>
         <id name="objId" type="java.lang.Long">
             <column name="OBJ_ID" precision="16" scale="0" />
-            <generator class="sequence">
-                <param name="sequence">SEQ_JCZ_OBJ_ID</param>
+            <generator class="com.aj.frame.db.hibernate.util.MySqlSequence">
+                <param name="sequence">S_COMMON_PKID_USM</param>
+                <param name="table">T_MYSQL_SEQUENCES</param>
             </generator>
         </id>
 <#list table.baseColumns as column>

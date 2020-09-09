@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import org.apache.log4j.Logger;
 import org.joy.config.Configuration;
 import org.joy.config.TypeMapping;
@@ -54,6 +55,7 @@ public class GeneratorCode {
     	generator.initSettings();
     	generator.getTonnection();
     	//提交远程测试
+		generator.generatorCode();
 	}
 	
 	private List<String> tableNames(String schema) {
@@ -65,7 +67,7 @@ public class GeneratorCode {
 	            }
 	            ResultSet rs = connection.getMetaData().getTables(null, schemaPattern, "%", null);
 	            while (rs.next()) {
-	                String tableSchema = rs.getString(2);
+	                String tableSchema = rs.getString(getSchemaIndex());
 	                String tableName = rs.getString(3);
 	                if ("TABLE".equalsIgnoreCase(rs.getString(4))) {
 	                	if (StringUtil.isNotEmpty(tableSchema)) {
@@ -108,8 +110,16 @@ public class GeneratorCode {
           	Database db = DatabaseFactory.createDatabase(connection, typeMapping);
           	List<String> tableNames = tableNames(name);
           	for (String tableName : tableNames) {
+          		if(!tableName.toUpperCase().startsWith("T_")) {
+					LOGGER.warn(String.format("无效的表名=%s,应以[T_]开头", tableName));
+          			continue;
+          		}
+          		if(configuration.getExcludeTables().contains(tableName.toUpperCase())) {
+					LOGGER.warn(String.format("忽略表=%s", tableName));
+          			continue;
+				}
           		LOGGER.info(String.format("生成tableName文件=%s", tableName));
-          		tableModel = db.getTable("catalog",name, tableName);
+          		tableModel = db.getTable(getCatalog(),name, tableName);
           		List<TemplateElement> templateElements = configuration.getTemplates();
           		FreeMarkerImpl fmi = new FreeMarkerImpl("");
           		for (TemplateElement templateElement : templateElements) {
@@ -159,7 +169,41 @@ public class GeneratorCode {
         } catch (Exception e) {
             LOGGER.info(e.getMessage(), e);
         }
-
     }
+
+    private int getSchemaIndex() {
+		try {
+			String productName = connection.getMetaData().getDatabaseProductName().toLowerCase();
+			if (productName.contains("mysql")) {
+				return 1;
+			}
+			else if (productName.contains("oracle")) {
+				return 2;
+			}
+			else {
+				return 2;
+			}
+		} catch (SQLException throwables) {
+			return 2;
+		}
+	}
+
+
+	private String getCatalog() {
+		try {
+			String productName = connection.getMetaData().getDatabaseProductName().toLowerCase();
+			if (productName.contains("mysql")) {
+				return "";
+			}
+			else if (productName.contains("oracle")) {
+				return "catalog";
+			}
+			else {
+				return "catalog";
+			}
+		} catch (SQLException throwables) {
+			return "catalog";
+		}
+	}
 
 }
