@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Main-Class: com.czr.code.GeneratorCode
+Class-Path: lib/freemarker.jar lib/beautyeye_lnf.jar lib/log4j-1.2.16.ja
+ r lib/velocity-1.7-dep.jar lib/postgresql-8.2-505.jdbc2.jar lib/ojdbc14
+ .jar lib/mysql-connector-java-5.1.36-bin.jar lib/sqljdbc4.jar lib/mysql
+ -connector-java-8.0.15.jar
+

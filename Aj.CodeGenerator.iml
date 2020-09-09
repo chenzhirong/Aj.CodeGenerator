@@ -20,35 +20,9 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="module-library">
-      <library name="freemarker.jar">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/freemarker.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="velocity-1.7-dep.jar">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/velocity-1.7-dep.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="log4j-1.2.16.jar">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/log4j-1.2.16.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="beautyeye_lnf.jar">
+      <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/beautyeye_lnf.jar!/" />
         </CLASSES>
@@ -57,7 +31,43 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="ojdbc14.jar">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/freemarker.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/log4j-1.2.16.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/mysql-connector-java-5.1.36-bin.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/mysql-connector-java-8.0.15.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/ojdbc14.jar!/" />
         </CLASSES>
@@ -66,7 +76,7 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="postgresql-8.2-505.jdbc2.jar">
+      <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/postgresql-8.2-505.jdbc2.jar!/" />
         </CLASSES>
@@ -75,7 +85,7 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="sqljdbc4.jar">
+      <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/sqljdbc4.jar!/" />
         </CLASSES>
@@ -83,11 +93,10 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/mysql-connector-java-5.1.36-bin.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/velocity-1.7-dep.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

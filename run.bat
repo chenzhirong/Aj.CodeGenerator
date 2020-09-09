@@ -1,2 +1,2 @@
-java -jar bin.jar
+java -jar Aj.CodeGenerator.jar
 PAUSE
